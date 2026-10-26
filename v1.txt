@@ -1,0 +1,34 @@
+1. AES Algorithm
+AES is a symmetric-key encryption algorithm with a 128-bit block size and key sizes of 128, 192, or 256 bits.
+1. Key Expansion: Generate round keys from the original key.
+2. Initial Round: Apply AddRoundKey using XOR.
+3. Main Rounds: Perform SubBytes, ShiftRows, MixColumns and AddRoundKey.
+4. Final Round: Perform SubBytes, ShiftRows and AddRoundKey, skipping MixColumns.
+5. Output: Generate ciphertext.
+2. DES Algorithm
+DES is a symmetric-key encryption algorithm with a 64-bit block size and a 56-bit effective key.
+1. Initial Permutation: Rearrange the plaintext bits.
+2. Splitting: Divide the block into two 32-bit halves, Left and Right.
+3. 16 Rounds: Expand the right half, XOR with the round key, apply S-boxes and permutation, then XOR with the left half and swap.
+4. Final Swap: Swap the two halves.
+5. Final Permutation: Apply the inverse initial permutation to obtain ciphertext.
+3. SHA-1 Algorithm
+SHA-1 is a one-way hashing algorithm that produces a 160-bit hash.
+1. Padding: Add 1 and 0 bits to make the message length 448 modulo 512.
+2. Append Length: Add the original message length as 64 bits.
+3. Initialize: Set five predefined 32-bit hash variables.
+4. Process Blocks: Divide the message into 512-bit blocks and perform 80 rounds of bitwise operations and rotations per block.
+5. Output: Combine the five hash variables to produce the 160-bit digest.
+4. MD5 Algorithm
+MD5 is a one-way hashing algorithm that produces a 128-bit hash.
+1. Padding: Add 1 and 0 bits to make the message length 448 modulo 512.
+2. Append Length: Add the original message length as 64 bits.
+3. Initialize: Set four predefined 32-bit variables A, B, C and D.
+4. Process Blocks: Divide the message into 512-bit blocks and perform 64 operations in four rounds using Boolean functions, modular addition and bit rotations.
+5. Output: Combine A, B, C and D to produce the 128-bit digest.
+Remember for viva:
+- AES: 10, 12 or 14 rounds.
+- DES: 16 rounds.
+- SHA-1: 160-bit hash.
+- MD5: 128-bit hash.
+- AES and DES are encryption algorithms; SHA-1 and MD5 are hash algorithms.
