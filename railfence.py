@@ -1,17 +1,22 @@
-
 def encrypt(text, key):
-    rail = [''] * key
+    rail = [[' ' for _ in range(len(text))] for _ in range(key)]
     row, step = 0, 1
 
-    for ch in text:
-        rail[row] += ch
+    for col, ch in enumerate(text):
+        rail[row][col] = ch
+
         if row == 0:
             step = 1
         elif row == key - 1:
             step = -1
+
         row += step
 
-    return ''.join(rail)
+    print("\nRail Fence Pattern:")
+    for r in rail:
+        print(' '.join(r))
+
+    return ''.join(''.join(r).replace(' ', '') for r in rail)
 
 
 def decrypt(text, key):
